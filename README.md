@@ -4,7 +4,6 @@
 
 # GhostFund: Private DeFi Yield with Human-Gated Automation
 
-**Winner — Portaldot Hackathon 2026**
 
 Compliant private yield vault that automates DeFi strategy monitoring, moves funds with sender privacy, and enforces deposit compliance at the smart contract level. GhostFund bridges the robust security of Rust-based `ink!` smart contracts with the deep liquidity of EVM-based DeFi protocols via the Portaldot Dual-VM ecosystem.
 
@@ -18,13 +17,9 @@ Compliant private yield vault that automates DeFi strategy monitoring, moves fun
 
 ## Live Demo
 
-**[https://ghostfund.vercel.app](https://ghostfund.vercel.app)**
 
 Connect your Web3 wallet on the Portaldot Testnet to view live vault data, approve yield recommendations, and interact with the vault.
 
-## Demo Video
-
-**[https://youtu.be/_UiGqtLKlWI](https://youtu.be/_UiGqtLKlWI)**
 
 ---
 
@@ -144,9 +139,62 @@ All contracts are built for the Portaldot ecosystem.
 
 ## Architecture
 
-<p align="center">
-  <img src="assets/ghostfund-architecture.jpg" alt="GhostFund Architecture" width="800">
-</p>
+```mermaid
+graph TB
+    subgraph User Layer
+        U["👤 User / Wallet"]
+        FE["🖥️ React Frontend<br/>(Vite + TypeScript)"]
+    end
+
+    subgraph Portaldot Substrate Layer
+        subgraph ink! Contracts
+            V["🏦 GhostFundVault<br/>(Core Vault)"]
+            PE["🛡️ PolicyEngine"]
+            ST["👻 StealthTransfer<br/>(Privacy Module)"]
+        end
+
+        subgraph Compliance Policies
+            AP["✅ AllowPolicy<br/>(KYC Whitelist)"]
+            MP["📊 MaxPolicy<br/>(Deposit Caps)"]
+            PP["⏸️ PausePolicy<br/>(Circuit Breaker)"]
+        end
+    end
+
+    subgraph EVM Layer
+        XVM["🔗 XVM Bridge<br/>(Cross-VM Calls)"]
+        LD["💰 LendDot<br/>(Lending Protocol)"]
+    end
+
+    subgraph Off-Chain Automation
+        TEE["🔒 Acurast TEE<br/>(Cron: every 5 min)"]
+        PY["🐍 Python Relayer<br/>(Portaldot SDK)"]
+    end
+
+    U -->|"Connect Wallet"| FE
+    FE -->|"Deposit / Withdraw"| V
+    V -->|"Validate Deposit"| PE
+    PE --> AP
+    PE --> MP
+    PE --> PP
+    V -->|"Stealth Withdraw"| ST
+    ST -->|"Ephemeral Keys"| U
+    V -->|"Supply / Redeem"| XVM
+    XVM -->|"Earn Yield"| LD
+    TEE -->|"APY Data"| PY
+    PY -->|"on_report()"| V
+
+    style V fill:#E6007A,stroke:#fff,color:#fff
+    style PE fill:#1a1a2e,stroke:#E6007A,color:#fff
+    style ST fill:#1a1a2e,stroke:#00ff88,color:#fff
+    style XVM fill:#2d1b69,stroke:#E6007A,color:#fff
+    style LD fill:#2d1b69,stroke:#00ff88,color:#fff
+    style TEE fill:#0a0a1a,stroke:#00d4ff,color:#fff
+    style PY fill:#0a0a1a,stroke:#00d4ff,color:#fff
+    style FE fill:#1a1a2e,stroke:#00d4ff,color:#fff
+    style AP fill:#0d1117,stroke:#00ff88,color:#fff
+    style MP fill:#0d1117,stroke:#00ff88,color:#fff
+    style PP fill:#0d1117,stroke:#ff4444,color:#fff
+```
 
 For a deep dive into the system design, please see [documentation.md](documentation.md).
 
