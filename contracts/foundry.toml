@@ -1,0 +1,30 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+solc_version = "0.8.26"
+evm_version = "cancun"
+
+remappings = [
+    "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+    "forge-std/=lib/forge-std/src/",
+]
+
+[fuzz]
+runs = 1000
+seed = '0x42'
+
+[invariant]
+runs = 256
+depth = 32
+
+[rpc_endpoints]
+# Westend Asset Hub (EVM via pallet-revive) — mirrors Polkadot Asset Hub mainnet
+westend_asset_hub = "${WESTEND_ASSET_HUB_RPC_URL}"
+# Keep Sepolia as fallback during transition
+sepolia = "${SEPOLIA_RPC_URL}"
+
+[etherscan]
+# Subscan supports Westend Asset Hub contract verification
+westend_asset_hub = { key = "${SUBSCAN_API_KEY}", url = "https://westend-asset-hub.subscan.io/api" }
+sepolia = { key = "${ETHERSCAN_API_KEY}" }

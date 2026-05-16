@@ -1,0 +1,7 @@
+[workspace]
+members = [
+    "ghostfund_vault",
+    "portaldot_policy_engine",
+    "stealth_transfer"
+]
+resolver = "2"

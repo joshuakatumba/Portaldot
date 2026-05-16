@@ -1,0 +1,6 @@
+{
+    "python.defaultInterpreterPath": "${workspaceFolder}/workflow-python/.venv/bin/python",
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/workflow-python"
+    ]
+}

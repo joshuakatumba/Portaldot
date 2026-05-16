@@ -1,0 +1,14 @@
+{
+  "schedule": "0 */5 * * * *",
+  "apyThresholdBps": 200,
+  "minDepositAmount": "1000000",
+  "chains": [
+    {
+      "assetAddress": "0xTBD_GHOST_TOKEN_ON_WESTEND",
+      "poolAddress": "0xTBD_HYDRATION_LENDING_POOL",
+      "ghostFundVaultAddress": "0xTBD_VAULT_ON_WESTEND_ASSET_HUB",
+      "chainName": "westend-asset-hub",
+      "rpcUrl": "https://westend-asset-hub-rpc.polkadot.io"
+    }
+  ]
+}

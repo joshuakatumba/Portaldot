@@ -1,0 +1,19 @@
+{
+  "name": "ghostfund-polkadot-workflow",
+  "version": "2.0.0",
+  "private": true,
+  "description": "GhostFund Acurast TEE workflow — Polkadot edition (replaces Chainlink CRE)",
+  "dependencies": {
+    "ethers": "^6.13.0",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.19",
+    "typescript": "^5.8.2"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "simulate": "bun run main.ts",
+    "register-job": "bun run ../acurast-job-registration.ts"
+  }
+}

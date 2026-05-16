@@ -1,0 +1,33 @@
+# Secrets
+.env
+.env.bak
+.env.local
+secrets.yaml
+
+# Foundry
+contracts/out/
+contracts/cache/
+contracts/lib/
+contracts/broadcast/
+
+# Node
+node_modules/
+workflow/workflow/node_modules/
+
+# OS
+.DS_Store
+workflow/workflow/.cre_build_tmp.*
+
+# Local
+.claude/
+docs/context/
+docs/prompts/
+tasks/
+
+# Coverage
+scripts/coverage/
+contracts/lcov.info
+
+# Misc
+*.log
+*.backup
