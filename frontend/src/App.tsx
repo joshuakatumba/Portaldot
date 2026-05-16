@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
+import { Landing } from './pages/Landing';
 import { Dashboard } from './pages/Dashboard';
 import { Stealth } from './pages/Stealth';
 import { Activity } from './pages/Activity';
@@ -14,7 +15,8 @@ function App() {
       <Router>
         <Layout>
           <Routes>
-            <Route path="/" element={<Dashboard />} />
+            <Route path="/" element={<Landing />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/stealth" element={<Stealth />} />
             <Route path="/activity" element={<Activity />} />
             <Route path="/admin" element={<Admin />} />

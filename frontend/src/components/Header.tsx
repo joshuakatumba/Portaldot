@@ -36,9 +36,9 @@ export const Header = () => {
         </button>
         <div className="live-indicator">
           <span className="live-dot"></span>
-          <span id="block-display">Sepolia</span>
+          <span id="block-display">Portaldot</span>
         </div>
-        <div className="chain-badge">Chain 11155111</div>
+        <div className="chain-badge">Dual-VM Active</div>
       </div>
     </header>
   );

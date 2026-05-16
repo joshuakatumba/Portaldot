@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { type ReactNode } from 'react';
 import { Header } from './Header';
 
 export const Layout = ({ children }: { children: ReactNode }) => {
@@ -19,15 +19,15 @@ export const Layout = ({ children }: { children: ReactNode }) => {
         
         {/* Architecture Flow */}
         <div className="arch-flow fade-in delay-1">
-          <span className="arch-node active">CRE Workflow</span>
+          <span className="arch-node active">TEE Yield Engine</span>
           <span className="arch-arrow">&#10132;</span>
           <span className="arch-node active">GhostFund Vault</span>
           <span className="arch-arrow">&#10132;</span>
-          <span className="arch-node active">Aave V3</span>
+          <span className="arch-node active">LendDot (EVM)</span>
           <span className="arch-arrow">&#10132;</span>
-          <span className="arch-node active">Private Tx</span>
+          <span className="arch-node active">Stealth Transfer</span>
           <span className="arch-arrow">&#10132;</span>
-          <span className="arch-node active">ACE Policy</span>
+          <span className="arch-node active">Dual-VM Policy</span>
         </div>
 
         <main>
@@ -37,18 +37,18 @@ export const Layout = ({ children }: { children: ReactNode }) => {
         {/* Footer */}
         <footer className="footer fade-in delay-6">
           <div>
-            <span id="refresh-bar">Auto-refresh every 30s</span>
+            <span id="refresh-bar">System Status: Nominal · Monitoring Portaldot Runtimes</span>
             <div className="tech-badges" style={{ marginTop: '0.6rem' }}>
-              <span className="tech-badge"><span className="dot" style={{ background: 'var(--accent)' }}></span>Chainlink CRE</span>
-              <span className="tech-badge"><span className="dot" style={{ background: 'var(--cyan)' }}></span>Private Tx</span>
-              <span className="tech-badge"><span className="dot" style={{ background: 'var(--green)' }}></span>ACE</span>
-              <span className="tech-badge"><span className="dot" style={{ background: '#f59e0b' }}></span>Aave V3</span>
-              <span className="tech-badge"><span className="dot" style={{ background: 'var(--red)' }}></span>Sepolia</span>
+              <span className="tech-badge"><span className="dot" style={{ background: 'var(--accent)' }}></span>Acurast TEE</span>
+              <span className="tech-badge"><span className="dot" style={{ background: 'var(--cyan)' }}></span>Stealth Transfer</span>
+              <span className="tech-badge"><span className="dot" style={{ background: 'var(--green)' }}></span>Policy Engine</span>
+              <span className="tech-badge"><span className="dot" style={{ background: '#f59e0b' }}></span>LendDot (EVM)</span>
+              <span className="tech-badge"><span className="dot" style={{ background: 'var(--red)' }}></span>Portaldot Native</span>
             </div>
           </div>
           <div className="footer-links">
-            <a href="https://sepolia.etherscan.io/address/0x4964991514f731CB3CF252108dFF889d30036fcb" target="_blank" rel="noopener noreferrer">Vault on Etherscan ↗</a>
-            <a href="https://sepolia.etherscan.io/address/0xB9431b3be9a56a1eeA8E728326332f8B4dD51382" target="_blank" rel="noopener noreferrer">GhostToken ↗</a>
+            <a href="#" onClick={(e) => e.preventDefault()}>Portaldot Explorer ↗</a>
+            <a href="#" onClick={(e) => e.preventDefault()}>Vault Contract ↗</a>
           </div>
         </footer>
       </div>
