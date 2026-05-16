@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const MOCK_LOGS = [
   { timestamp: '14:02:11.432', type: 'INFO', module: 'Portaldot', message: 'Syncing relay chain headers...' },

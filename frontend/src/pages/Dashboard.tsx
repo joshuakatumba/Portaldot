@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useWeb3 } from '../context/Web3Context';
 
 export const Dashboard = () => {
-  const { provider, signer, address } = useWeb3();
+  const { address } = useWeb3();
   const [activeTab, setActiveTab] = useState<'vault' | 'lenddot'>('vault');
 
   return (

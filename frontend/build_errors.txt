@@ -1,0 +1,12 @@
+src/App.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/Header.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/Layout.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/Navigation.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/context/Web3Context.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/pages/Activity.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/pages/Admin.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/pages/Dashboard.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/pages/Dashboard.tsx(5,11): error TS6133: 'provider' is declared but its value is never read.
+src/pages/Dashboard.tsx(5,21): error TS6133: 'signer' is declared but its value is never read.
+src/pages/Landing.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/pages/Stealth.tsx(1,8): error TS6133: 'React' is declared but its value is never read.

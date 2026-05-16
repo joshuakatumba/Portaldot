@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
 import { type BrowserProvider, type JsonRpcSigner, ethers } from 'ethers';
 
 // Declare window.ethereum for TypeScript to fix the red lines
