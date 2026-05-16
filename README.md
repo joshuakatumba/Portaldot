@@ -142,32 +142,32 @@ All contracts are built for the Portaldot ecosystem.
 ```mermaid
 graph TB
     subgraph User Layer
-        U["👤 User / Wallet"]
-        FE["🖥️ React Frontend<br/>(Vite + TypeScript)"]
+        U["User / Wallet"]
+        FE["React Frontend<br/>(Vite + TypeScript)"]
     end
 
     subgraph Portaldot Substrate Layer
-        subgraph ink! Contracts
-            V["🏦 GhostFundVault<br/>(Core Vault)"]
-            PE["🛡️ PolicyEngine"]
-            ST["👻 StealthTransfer<br/>(Privacy Module)"]
+        subgraph ink Contracts
+            V["GhostFundVault<br/>(Core Vault)"]
+            PE["PolicyEngine"]
+            ST["StealthTransfer<br/>(Privacy Module)"]
         end
 
         subgraph Compliance Policies
-            AP["✅ AllowPolicy<br/>(KYC Whitelist)"]
-            MP["📊 MaxPolicy<br/>(Deposit Caps)"]
-            PP["⏸️ PausePolicy<br/>(Circuit Breaker)"]
+            AP["AllowPolicy<br/>(KYC Whitelist)"]
+            MP["MaxPolicy<br/>(Deposit Caps)"]
+            PP["PausePolicy<br/>(Circuit Breaker)"]
         end
     end
 
     subgraph EVM Layer
-        XVM["🔗 XVM Bridge<br/>(Cross-VM Calls)"]
-        LD["💰 LendDot<br/>(Lending Protocol)"]
+        XVM["XVM Bridge<br/>(Cross-VM Calls)"]
+        LD["LendDot<br/>(Lending Protocol)"]
     end
 
     subgraph Off-Chain Automation
-        TEE["🔒 Acurast TEE<br/>(Cron: every 5 min)"]
-        PY["🐍 Python Relayer<br/>(Portaldot SDK)"]
+        TEE["Acurast TEE<br/>(Cron: every 5 min)"]
+        PY["Python Relayer<br/>(Portaldot SDK)"]
     end
 
     U -->|"Connect Wallet"| FE
